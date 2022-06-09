@@ -4,7 +4,7 @@ const internal = require('stream');
 let networkInterfaces = os.networkInterfaces();
 
 
-var minutes = 1, the_interval = minutes * 1 * 1000;
+var minutes = 1, the_interval = minutes * 60 * 1000; // u can change time as u whant i will make it 1 min u can mainmaixit if u whant to 
 setInterval(function() {
 
  try{
@@ -31,7 +31,7 @@ https.get(`https://username:password@dynupdate.no-ip.com/nic/update?hostname=myt
     data += chunk;
   });
   resp.on('end', () => {
-    console.log(data);
+    console.log(data);// to get the respon data 
   });
 }).on("error", (err) => {
   console.log("Error: " + err.message);
